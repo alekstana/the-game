@@ -3,9 +3,9 @@ Bill Murray tries to crash your party
 
 ## Description
 Help Bill Murray to crash your party in this simple entertaining 8bit game. Bill Murray, the protagonist of the game, continously moves horizontally and tries to jump over "bad" obstacles that include: sticky ghosts, nasty sharks and angry groundhogs. Once Bill Murray avoided the obtacle his score goes up by 1. Bill Murray will be able to triple the score by collecting "good" obstacles, which include: puppies, whisky bottles and red hats.
-The game will be over when: the Bill Murray didn't manage to avoid a "bad" obstacle.
+The game will be over when: Bill Murray didn't manage to avoid a "bad" obstacle.
 LEVEL UP (implemented if time allows)
-The game will be won if Bill Murray will reach your house after reacin a score of 2020 Units. Winning bonus - a selfie with Bill. :)
+The game will be won if Bill Murray will reach your house after reaching a score of 2020 Units. Winning bonus - a selfie with Bill. :)
 
 
 ## MVP (DOM - CANVAS)

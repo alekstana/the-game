@@ -31,17 +31,17 @@ main.js
 
 
 game.js
- - drawCanvas(){}
- - Game(){} // <- here goes all game function
- - checkGoodCollisions(){}
- - checkBadCollisions(){}
- - clearCanvas(){}
- - GameOver(){}
+- drawCanvas(){}
+- Game(){} // <- here goes all game function
+- checkGoodCollisions(){}
+- checkBadCollisions(){}
+- clearCanvas(){}
+- GameOver(){}
 
 bill.js
- - bill () { this.x; this.y; this.direction; this.size }
- - draw(){}
- - jump(){}
+- bill () { this.x; this.y; this.direction; this.size }
+- draw(){}
+- jump(){}
 
 
 obstacles.js
@@ -59,28 +59,28 @@ Definition of the different states and their transition (transition functions)
 
 
 ## Task
-main - buildDom
-main - buildStartScreen
-main - addEventListener
-main - buildGameOverScreen
-main - buildGameWonScreen (backlog)
+- main - buildDom;
+- main - buildStartScreen
+- main - addEventListener
+- main - buildGameOverScreen
+- main - buildGameWonScreen (backlog)
 
-game - buildGameScreen
-game - buildCanvas
-game - drawCanvas
-game - startLoop
+- game - buildGameScreen
+- game - buildCanvas
+- game - drawCanvas
+- game - startLoop
 
-bill - draw
-bill - move - >jump
-bill - animate (backlog)
+- bill - draw
+- bill - move - >jump
+- bill - animate (backlog)
 
-obstacles - draw
-obstacles - move/loop
+- obstacles - draw
+- obstacles - move/loop
 
-game - checkCollision
-game - addEventListener
-game - GameOver
-game - GameWon (backlog)
+- game - checkCollision
+- game - addEventListener
+- game - GameOver
+- game - GameWon (backlog)
 
 
 

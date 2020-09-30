@@ -14,50 +14,50 @@ let points = 1;
 // --------- IMAGES ---------
 
 let bg = new Image()
-bg.src = 'images/bg.png'
+bg.src = './images/bg.png'
 
 let floor = new Image ()
-floor.src = '/Images/Floor.png'
+floor.src = './Images/Floor.png'
 
 let houses = new Image ()
-houses.src = '/Images/Houses.png'
+houses.src = './Images/Houses.png'
 
 let trees = new Image ()
-trees.src = '/Images/Trees.png'
+trees.src = './Images/Trees.png'
 
 let clouds = new Image ()
-clouds.src = '/Images/Clouds.png'
+clouds.src = './Images/Clouds.png'
 
 let bill = new Image ()
-bill.src = '/Images/bill.png'
+bill.src = './Images/bill.png'
 
 
 let shark = new Image ()
-shark.src = '/Images/shark.png'
+shark.src = './Images/shark.png'
 
 let corgi = new Image ()
-corgi.src = '/Images/corgi.png'
+corgi.src = './Images/corgi.png'
 
 let ghost = new Image ()
-ghost.src = '/Images/ghost.png'
+ghost.src = './Images/ghost.png'
 
 let groundhog = new Image ()
-groundhog.src = '/Images/groundhog.png'
+groundhog.src = './Images/groundhog.png'
 //start screen
 let gameStart = new Image ()
-gameStart.src = '/Images/Game_Start.png'
+gameStart.src = './Images/Game_Start.png'
 
 let btPlay = new Image ()
-btPlay.src = '/Images/play_bt.png'
+btPlay.src = './Images/play_bt.png'
 
 let horray = new Image ()
-horray.src =`/Images/hooraymurray!!!.png`
+horray.src =`./Images/hooraymurray!!!.png`
 
 let almost = new Image ()
-almost.src =`/Images/almostthere.png`
+almost.src =`./Images/almostthere.png`
 
 let sun = new Image ()
-sun.src =`/Images/sun.png`
+sun.src =`./Images/sun.png`
 
 
 // --------- Elements & Characters---------
@@ -238,7 +238,7 @@ function startGame(){
                 }
                 else if (!villians[i].img.src.includes(`corgi`) ) { 
                     clearInterval(intervalId)
-                    window.location.href = 'http://127.0.0.1:5501/gameover.html';
+                    window.location.href = './gameover.html';
                     // alert('Game Over')
                 }
 
@@ -251,7 +251,7 @@ function startGame(){
     
 
             if (score === 3){
-                window.location.href = 'http://127.0.0.1:5501/gamewon.html';
+                window.location.href = './gamewon.html';
             }
         }
 

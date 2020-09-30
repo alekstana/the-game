@@ -252,7 +252,7 @@ function startGame(){
             }
     
 
-            if (score === 5){
+            if (score === 10){
                 window.location.href = './gamewon.html';
             }
             // else if (score >= 2){
@@ -266,9 +266,9 @@ function startGame(){
     ctx.font = "bold 16px verdana, sans-serif, white";
     ctx.fillStyle = "#14818e"
     ctx.fillText(`Score: ${score}`, 30, 30 )  
-    if (score === 1){
+    if (score === 2){
         ctx.drawImage(horray,500,50);
-    } else if (score === 2){
+    } else if (score === 7){
         ctx.drawImage(almost,500,50);
     }
     // else if (score === 2){

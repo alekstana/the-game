@@ -1,0 +1,110 @@
+#game{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+#startgame{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+.btn_play{
+    position: absolute;
+    top: 540px;
+    /* left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); */
+    background-color:#e7759a;
+    color: #f5dc37;
+    font-family: monospace;
+    font-size: 22px;
+    padding: 12px 44px;
+    margin-top:60px;
+    border: 3px solid #f5dc37;
+    cursor: pointer;
+    text-decoration: none;
+    /* border-radius: 5px; */
+}
+
+.btn_play_again{
+    position: absolute;
+    top: 520px;
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); */
+    background-color:#ff414d;
+    color: #f5dc37;
+    font-family: monospace;
+    font-size: 22px;
+    padding: 12px 44px;
+    /* margin-top:32px; */
+    border: 3px solid #f5dc37;
+    cursor: pointer;
+    text-decoration: none;
+    /* border-radius: 5px; */
+  }
+
+  .btn_won{
+    position: absolute;
+    top: 550px;
+    /* left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); */
+    background-color:#e7759a;
+    color: #f5dc37;
+    font-family: monospace;
+    font-size: 22px;
+    padding: 12px 44px;
+    /* margin-top:30px; */
+    border: 3px solid #f5dc37;
+    cursor: pointer;
+    text-decoration: none;
+    /* border-radius: 5px; */
+}
+
+
+.btn_play_again2{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    /* background-color:#e7759a; */
+    
+    color: #e7759a;
+    font-family: monospace;
+    font-size: 22px;
+    /* padding: 12px 44px; */
+    /* margin-top:px; */
+    /* border: 3px solid #f5dc37; */
+
+}
+
+body{
+    background-color: #ffbe3b;
+}
+
+
+#gameover{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+
+#soundOFFLogo{
+    width: 30px;
+    margin:30px;
+}
+
+#soundONLogo{
+    width: 30px;
+    margin:30px;
+}
+
+
+#soundIcons{
+    display: flex;
+    justify-content: center;
+
+}

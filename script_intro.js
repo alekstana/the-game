@@ -1,6 +1,6 @@
 
 let indexSound = new Audio("./Images/Redbone.mp3");
-let clickSound = new Audio("./Images/Redbone.mp3");
+// let clickSound = new Audio("./Images/Redbone.mp3");
 
 
 function newSound(sound, level, looping){

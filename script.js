@@ -14,7 +14,7 @@ let points = 1;
 // --------- IMAGES ---------
 
 let bg = new Image()
-bg.src = './images/bg.png'
+bg.src = './Images/bg.png'
 
 let floor = new Image ()
 floor.src = './Images/Floor.png'

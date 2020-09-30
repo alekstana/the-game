@@ -209,11 +209,13 @@ function startGame(){
         ctx.drawImage(bill, billX, billY)
 
         // --------- Villains -------- 
+        let speed = 1
+
 
         for(let i=0; i< villians.length; i++){
         ctx.drawImage(villians[i].img, villians[i].x, villians[i].y)
-        villians[i].x -= 1
-    
+        villians[i].x -= speed
+
             if (villians[i].x == 1100) {
                 villians.push({
                     img: villianImages[Math.floor(Math.random() * villianImages.length)],
@@ -250,9 +252,13 @@ function startGame(){
             }
     
 
-            if (score === 3){
+            if (score === 5){
                 window.location.href = './gamewon.html';
             }
+            // else if (score >= 2){
+            //     speed = 2;
+            // }
+
         }
 
 
@@ -265,6 +271,10 @@ function startGame(){
     } else if (score === 2){
         ctx.drawImage(almost,500,50);
     }
+    // else if (score === 2){
+    //     speed = speed*2;
+    // }
+
     
 
 
@@ -305,11 +315,11 @@ soundOff.addEventListener("click", function(){
 
 
 soundOn.addEventListener("click", function(){
-    newSound(indexSound, 0.8, true)
+    newSound(indexSound, 0.1, true)
     }
 )
 
 
 
-newSound(indexSound, 0.8, true)
+newSound(indexSound, 0.1, true)
 

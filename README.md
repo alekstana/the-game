@@ -95,4 +95,4 @@ https://trello.com/b/wG4MLreJ/the-game
 https://github.com/alekstana/the-game
 
 ### Slides
-in the progress
+https://slides.com/alekstana/the-game/edit#/0

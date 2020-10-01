@@ -31,7 +31,7 @@ newSound(indexSound, 0.1, true)
 let btn = document.querySelector(".btn_play_again")
 btn.addEventListener(`mouseover`, function( event ) {   
     btn.style.background= "#ffbe3b";
-    btn.style.color= "#ff414d";
+    btn.style.color= "##ff414d";
     // btn.style.borderColor= "white";
 });
 btn.addEventListener(`mouseout`, function( event ) {   

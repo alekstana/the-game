@@ -6,6 +6,7 @@ let gameTime = 0;
 let score = 0;
 let corgiIndexes = []
 let points = 1;
+let speed = 1
 
 
 // --------- IMAGES ---------
@@ -43,7 +44,7 @@ ghost.src = './Images/ghost.png'
 
 let groundhog = new Image ()
 groundhog.src = './Images/groundhog.png'
-//start screen
+
 let gameStart = new Image ()
 gameStart.src = './Images/Game_Start.png'
 
@@ -56,8 +57,18 @@ horray.src =`./Images/hooraymurray!!!.png`
 let almost = new Image ()
 almost.src =`./Images/almostthere.png`
 
+let canDo = new Image ()
+canDo.src =`./Images/cando.png`
+
+let levelUp = new Image ()
+levelUp.src =`./Images/levelUp.png`
+
+
 let sun = new Image ()
 sun.src =`./Images/sun.png`
+
+let rocket = new Image ()
+rocket.src =`./Images/rocket.png`
 
 //--------------/Score Sound/---------------//
 
@@ -65,6 +76,13 @@ sun.src =`./Images/sun.png`
 let scoreSound = new Audio("./Images/bark.mp3");
 
 function winSound(sound, level){
+    sound.volume = level;
+    sound.play();
+}
+
+let levelUpAudio = new Audio("./Images/levelUp.mp3");
+
+function levelUpSound(sound, level){
     sound.volume = level;
     sound.play();
 }
@@ -87,8 +105,14 @@ let cloudsMove =[
 ]
 
 let sunMove =[
-    {x:0, y: 0}
+    {x:-100, y: 0}
 ]
+
+
+let rocketMove =[
+    {x:0, y: 260}
+]
+
 
 let villianImages = [corgi, shark, groundhog, ghost]
 let lanes = [350, 430]
@@ -118,7 +142,7 @@ document.addEventListener('keydown', e => {
              };
              break;
         case 32: {
-                if (billY > 200) {
+                if (billY = 290) {
                     billY=billY-100
                 }
             
@@ -136,13 +160,6 @@ document.addEventListener(`keyup`, e =>{
     }
 })
 
-// document.addEventListener(`keyup`, e =>{
-//     if (e.keyCode == `32`){
-//         billY= yofBill
-//     }else {
-//     billY =billY
-// }
-// })
 
 
 
@@ -167,6 +184,20 @@ function startGame(){
                     } 
                 }
 
+                for(let i=0; i< rocketMove.length; i++){
+                    ctx.drawImage(rocket, rocketMove[i].x, rocketMove[i].y)
+                    rocketMove[i].x -= 1
+                    rocketMove[i].y -= 0.1
+                    
+
+                    
+                            if (rocketMove[i].x == -3000) {
+                                rocketMove.push({
+                                    x: canvas.width-1,
+                                    y: 60
+                                })
+                            } 
+                        }       
 
 
     /// clouds
@@ -218,19 +249,11 @@ function startGame(){
         ctx.drawImage(bill, billX, billY)
 
 
-        // --------- Score -------- 
-        let speed = 1
-
-        if (score >= 1){
-            speed = speed++;
-            function billSwap(){
-            bill.src = './Images/bill_hooverboard.png'
-            bill.onload = draw();
-            };
-        }
          
         // --------- Villains -------- 
         for(let i=0; i< villians.length; i++){
+            if(villians[i] != null){
+               
         ctx.drawImage(villians[i].img, villians[i].x, villians[i].y)
         villians[i].x -= speed
 
@@ -256,6 +279,13 @@ function startGame(){
                     corgiIndexes.push(i)
                     winSound(scoreSound, 0.2, true)
                     score++;
+                    if (score == 5){ // 6
+                        speed++;
+                        bill.src = './Images/bill_hooverbord.png'
+                        levelUpSound(levelUpAudio, 0.2, true)
+                    }
+                     
+
                 }
                 else if (!villians[i].img.src.includes(`corgi`) ) { 
                     clearInterval(intervalId)
@@ -263,14 +293,18 @@ function startGame(){
                     // alert('Game Over')
                 }
 
-                else if (villians[i].img.src.includes(`corgi`)){
-                    villians.splice(i, 1)
+                else if (villians[i].img.src.includes(`corgi_love`)){
+                    // villians.splice(i, 1)
+                    villians[i] = null;
+                     
                 }
                 
             }
            if (score === 10){
                 window.location.href = './gamewon.html';
+            } 
             }
+
 
 
         }
@@ -280,11 +314,17 @@ function startGame(){
     ctx.font = "bold 16px verdana, sans-serif, white";
     ctx.fillStyle = "#14818e"
     ctx.fillText(`Score: ${score}`, 30, 30 )  
-    if (score === 2){
+    if (score === 1 || score === 2){
         ctx.drawImage(horray,500,50);
-    } else if (score === 7){
+    } else if (score > 6){
         ctx.drawImage(almost,500,50);
-    } 
+    } else if (score === 5 || score === 6){
+        ctx.drawImage(levelUp,500,50);
+
+    }else if (score === 3 || score === 4){
+        ctx.drawImage(canDo,500,50);
+
+    }
     
 
 }
@@ -327,7 +367,6 @@ soundOn.addEventListener("click", function(){
     newSound(indexSound, 0.1, true)
     }
 )
-
 
 
 newSound(indexSound, 0.1, true)

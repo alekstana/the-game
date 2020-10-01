@@ -1,13 +1,11 @@
-
 //--------------/Sound/---------------//
+let indexSound = new Audio("./Images/Redbone.mp3");
 
-let indexSound = new Audio("./Images/GameOver.mp3");
 function newSound(sound, level, looping){
     sound.volume = level;
     sound.play();
-    // sound.loop = looping;
+    sound.loop = looping;
 }
-
 
 let soundOff = document.getElementById("soundOFFLogo");
 let soundOn = document.getElementById("soundONLogo");
@@ -28,15 +26,15 @@ newSound(indexSound, 0.1, true)
 
 
 //--------------/Button/---------------//
-let btn = document.querySelector(".btn_play_again")
+let btn = document.querySelector(".btn_won")
 btn.addEventListener(`mouseover`, function( event ) {   
     btn.style.background= "#ffbe3b";
-    btn.style.color= "#ff414d";
+    btn.style.color= "#e7759a";
     // btn.style.borderColor= "white";
 });
 btn.addEventListener(`mouseout`, function( event ) {   
     btn.style.color= "#ffbe3b";
-    btn.style.background= "#ff414d";
+    btn.style.background= "#e7759a";
     btn.style.borderColor= "#ffbe3b";
 
 });

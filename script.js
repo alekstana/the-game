@@ -1,7 +1,4 @@
 let canvas = document.querySelector('canvas')
-// canvas.style.border = '1px solid #1aa6b7';
-
-
 let ctx = canvas.getContext('2d')
 
 let intervalId = 0;
@@ -29,14 +26,17 @@ let clouds = new Image ()
 clouds.src = './Images/Clouds.png'
 
 let bill = new Image ()
-bill.src = './Images/bill.png'
+bill.src = './Images/bill_skateboard.png'
+
+// let billHoover = new Image ()
+// billHoover.src = './Images/bill_hooverboard.png'
 
 
 let shark = new Image ()
 shark.src = './Images/shark.png'
 
 let corgi = new Image ()
-corgi.src = './Images/corgi.png'
+corgi.src = './Images/corgi_love.png'
 
 let ghost = new Image ()
 ghost.src = './Images/ghost.png'
@@ -59,6 +59,15 @@ almost.src =`./Images/almostthere.png`
 let sun = new Image ()
 sun.src =`./Images/sun.png`
 
+//--------------/Score Sound/---------------//
+
+
+let scoreSound = new Audio("./Images/bark.mp3");
+
+function winSound(sound, level){
+    sound.volume = level;
+    sound.play();
+}
 
 // --------- Elements & Characters---------
 
@@ -208,10 +217,19 @@ function startGame(){
         // --------- Character -------- 
         ctx.drawImage(bill, billX, billY)
 
-        // --------- Villains -------- 
+
+        // --------- Score -------- 
         let speed = 1
 
-
+        if (score >= 1){
+            speed = speed++;
+            function billSwap(){
+            bill.src = './Images/bill_hooverboard.png'
+            bill.onload = draw();
+            };
+        }
+         
+        // --------- Villains -------- 
         for(let i=0; i< villians.length; i++){
         ctx.drawImage(villians[i].img, villians[i].x, villians[i].y)
         villians[i].x -= speed
@@ -236,6 +254,7 @@ function startGame(){
             ) {
                 if (villians[i].img.src.includes(`corgi`) && !corgiIndexes.includes(i)){
                     corgiIndexes.push(i)
+                    winSound(scoreSound, 0.2, true)
                     score++;
                 }
                 else if (!villians[i].img.src.includes(`corgi`) ) { 
@@ -245,19 +264,14 @@ function startGame(){
                 }
 
                 else if (villians[i].img.src.includes(`corgi`)){
-                    // ctx.villians[i].img.src.includes(`corgi`).globalAlpha = 0;
-                    //ctx.villians[i].img.src.includes(`corgi`).style.display = "none"
                     villians.splice(i, 1)
                 }
+                
             }
-    
-
-            if (score === 10){
+           if (score === 10){
                 window.location.href = './gamewon.html';
             }
-            // else if (score >= 2){
-            //     speed = 2;
-            // }
+
 
         }
 
@@ -270,13 +284,8 @@ function startGame(){
         ctx.drawImage(horray,500,50);
     } else if (score === 7){
         ctx.drawImage(almost,500,50);
-    }
-    // else if (score === 2){
-    //     speed = speed*2;
-    // }
-
+    } 
     
-
 
 }
 
